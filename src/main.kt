@@ -50,6 +50,7 @@ fun explorer()
         "if3" -> If3()
         "if12" -> If12()
         "if13" -> If13()
+        "if14" -> If14()
         "i19" -> Integer19()
         "i20" -> Integer20()
         "c1" -> Case1()
@@ -500,6 +501,61 @@ fun If13()
     }
 }
 
+fun If14()
+{
+    val n = 0
+    while(n != 1)
+    {
+        println("Введите три целых числа A, B и C, не равных друг другу")
+
+        print("A: "); var A = readLine()!!.toInt()
+        print("B: "); var B = readLine()!!.toInt()
+        print("C: "); var C = readLine()!!.toInt()
+
+        if(A != B && B != C && A != C)
+        {
+            if (A < C && C < B)
+            {
+                println("Наименьшее число: $A\nНаибольшее число: $B")
+            }
+            else if (A < B && B < C)
+            {
+                println("Наименьшее число: $A\nНаибольшее число: $C")
+            }
+            else if (B < C && C < A)
+            {
+                println("Наименьшее число: $B\nНаибольшее число: $A")
+            }
+            else if (B < A && A < C)
+            {
+                println("Наименьшее число: $B\nНаибольшее число: $C")
+            }
+            else if (C < B && B < A)
+            {
+                println("Наименьшее число: $C\nНаибольшее число: $A")
+            }
+            else if (C < A && A < B)
+            {
+                println("Наименьшее число: $C\nНаибольшее число: $B")
+            }
+        }
+        else
+        {
+            println("Вниметельнее читайте задание >:(")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
 // всё ещё коробка -_-
 
 fun If4() //решил Лев Горобец
