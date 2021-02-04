@@ -49,6 +49,7 @@ fun explorer()
         "if2" -> If2()
         "if3" -> If3()
         "if12" -> If12()
+        "if13" -> If13()
         "i19" -> Integer19()
         "i20" -> Integer20()
         "c1" -> Case1()
@@ -461,6 +462,44 @@ fun If12()
     }
 }
 
+fun If13()
+{
+    val n = 0
+    while(n != 1)
+    {
+        println("Введите три целых числа A, B и C, не равных друг другу")
+
+        print("A: "); var A = readLine()!!.toInt()
+        print("B: "); var B = readLine()!!.toInt()
+        print("C: "); var C = readLine()!!.toInt()
+
+        if(A != B && B != C && A != C)
+        {
+            if ((A < C && C < B) || (B < C && C < A))
+                println("Среднее число: $C")
+            else if ((C < B && B < A) || (A < B && B < C))
+                println("Среднее число: $B")
+            else if ((B < A && A < C) || (C < A && A < B))
+                println("Среднее число: $A")
+        }
+        else
+        {
+            println("Вниметельнее читайте задание >:(")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
 // всё ещё коробка -_-
 
 fun If4() //решил Лев Горобец
@@ -627,13 +666,20 @@ fun if6()
     var a = readLine().toString().toDouble()
     println("Второе число: ")
     var b = readLine().toString().toDouble()
-    if (a > b) {
+    if (a > b)
+    {
         println("Большее число: $a")
-    } else if (b < a) {
+    }
+    else if (b < a)
+    {
         println("Большее число: $b")
-    } else if (a == b) {
+    }
+    else if (a == b)
+    {
         println("Оба числа равны.")
-    } else {
+    }
+    else
+    {
         println("Программа тебя не понимает.")
     }
 }
