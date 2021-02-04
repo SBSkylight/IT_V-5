@@ -556,6 +556,50 @@ fun If14()
         }
     }
 }
+
+fun If15()
+{
+    val n = 0
+    while(n != 1)
+    {
+        println("Введите три целых числа A, B и C, не равных друг другу")
+
+        print("A: "); var A = readLine()!!.toInt()
+        print("B: "); var B = readLine()!!.toInt()
+        print("C: "); var C = readLine()!!.toInt()
+
+        if(A != B && B != C && A != C)
+        {
+            if ((A < C && C < B) || (A < B && B < C))
+            {
+                println("Сумма наибольших чисел равна ${B + C}")
+            }
+            else if ((B < A && A < C) || (B < C && C < A))
+            {
+                println("Сумма наибольших чисел равна ${C + A}")
+            }
+            else if ((C < B && B < A) || (C < A && A < B))
+            {
+                println("Сумма наибольших чисел равна ${B + A}")
+            }
+        }
+        else
+        {
+            println("Вниметельнее читайте задание >:(")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
 // всё ещё коробка -_-
 
 fun If4() //решил Лев Горобец
