@@ -8,23 +8,19 @@ fun main()
         explorer()
 
         println("Хотите ли вы продолжить тестирование задач? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
 
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
+        when(answer)
         {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
         }
     }
 }
 fun explorer()
 {
     println("Добро пожаловать! Эта программа является решебником по задачнику Абрамяна на языке Kotlin\nВнутренний синтаксис(Begin1 - b1)")
-    print("Список доступных задач:\nBegin12\nBegin13\nBegin23\nBegin33\nInteder28\nFor1\nArray1\nIf30\nIf29\nIf28\nIf1\nIf2\nIf3\nCase1\nInteger19\nInteger20\n")
     print("Выберите задачу: "); var user_choise = readLine()
     when(user_choise)
     {
@@ -37,10 +33,9 @@ fun explorer()
         "b12" -> Begin12()
         "b13" -> Begin13()
         "b15" -> Begin15()
-        "i4" -> If4()
-        "i8" -> if8()
+        "if4" -> If4()
+        "if8" -> if8()
         "b33" -> Begin33()
-//        "b23" -> Begin23()
         "i7"-> Interger7()
         "i9"-> Interger9()
         "i11"-> Integer11()
@@ -53,6 +48,7 @@ fun explorer()
         "if1" -> If1()
         "if2" -> If2()
         "if3" -> If3()
+        "if12" -> If12()
         "i19" -> Integer19()
         "i20" -> Integer20()
         "c1" -> Case1()
@@ -68,12 +64,14 @@ fun Begin1()
    var P = 4*a
    println(P)
 }
+
 fun Begin2()
 {
     var a = 100
     var S = a*a
     println(S)
 }
+
 fun Begin3()
 {
     var a = 100
@@ -83,6 +81,7 @@ fun Begin3()
     println(S)
     println(P)
 }
+
 fun Begin4()
 {
     var d = 100
@@ -90,6 +89,7 @@ fun Begin4()
     var L = p * d
     println(L)
 }
+
 fun Begin5()
 {
     var a = 100
@@ -110,17 +110,6 @@ fun Begin6()
     println(S)
 }
 
-
-
-
-
-
-
-
-
-
-
-
 fun begin6() { //решил Лев Горобец
     println("a: ")
     var a = readLine().toString().toDouble()
@@ -133,9 +122,6 @@ fun begin6() { //решил Лев Горобец
     println("V = $V")
     println("S = $S")
 }
-
-
-
 
 fun Begin12()//Михаил Розенталь
 {
@@ -151,6 +137,7 @@ fun Begin12()//Михаил Розенталь
     print("Гипотенуза с = $c \n Гипотенуза сpow = $cpow \n")
     print("Периметр = $P \n Периметр(pow) = $Pcpow \n")
 }
+
 fun Integer11()//Решила межгалакическая коллегия группы итв-5
 {
     print("Integer11.\nДано трехзначное число. Найти сумму и произведение его цифр.\n")
@@ -162,10 +149,7 @@ fun Integer11()//Решила межгалакическая коллегия г
     println("Сумма: ${number/100+number%100/10+number%100%10}")
     println("Произведение: ${number/100*number%100/10*number%100%10}")
 }
-fun If30_1()
-{
 
-}
 fun Interger7()//Решила Ожогина Танюшка!11!!!11
 {
     print("Integer7.\n Дано дыухзначное число. Найтри сумму и произведение его цифр.\n")
@@ -175,10 +159,8 @@ fun Interger7()//Решила Ожогина Танюшка!11!!!11
     println("${number%10}")
     println("Сумма: ${number/10+number%10}")
     println("Произведение: ${number/10*number%10}")
-
-
-
 }
+
 fun Interger9()// Снова Ожогина Танюшка лол!!1!!!!1!
 {
     print("Integer9.\n Дано трёхзначное число. Используя одну операцию деления нацело, вывести первую цифру данного числа(сотни)\n")
@@ -186,6 +168,7 @@ fun Interger9()// Снова Ожогина Танюшка лол!!1!!!!1!
     var number = readLine()!!.toInt()
     println("Сотни: ${number/100}")
 }
+
 // большая коробка решений Гладких Марины *_*
 fun Integer28()
 {
@@ -193,13 +176,13 @@ fun Integer28()
 
     print("Введите номер дня недели, которым было 1-е января: "); val N = readLine()!!.toInt()
     print("Введите номер дня года: "); val K = readLine()!!.toInt()
-// а
     var i = (1 + N - 1) % 7
     println("1-е января: 1\nДень недели: ${days[i]}\n")
 
     var n = (K + N - 1) % 7
     println("День года: $K\nДень недели: ${days[n]}")
 }
+
 fun For1()
 {
     println("Введите целые числа K и N, большее нуля.")
@@ -208,10 +191,12 @@ fun For1()
     print("N: ");
     val N = readLine()!!.toInt()
 
-    for (i in 0..N) {
+    for (i in 0..N)
+    {
         println(K)
     }
 }
+
 fun Araray1()
 {
     print("Введите число N, большее нуля: "); val N = readLine()!!.toInt()
@@ -223,6 +208,7 @@ fun Araray1()
     }
     println(numbers)
 }
+
 fun If30()
 {
     val n = 0
@@ -258,19 +244,224 @@ fun If30()
         }
 
         println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
 
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
+        when(answer)
         {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
         }
     }
 }
+
+fun If29()
+{
+    val n = 0
+    while(n == 0)
+    {
+        print("Введите целое число: "); val number = readLine()!!.toInt()
+        if(number < 0)
+        {
+            if (number % 2 == 0)
+                println("Число $number является чётным отрицательным")
+            else
+                println("Число $number является нечётным отрицательным")
+        }
+        else if(number > 0)
+        {
+            if (number % 2 == 0)
+                println("Число $number является чётным положительным")
+            else
+                println("Число $number является нечётным положительным")
+        }
+        else if(number == 0)
+            println("Число $number является нулевым")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+fun If28()
+{
+    val n = 0
+    while (n == 0)
+    {
+        print("Введите номер года: "); val number = readLine()!!.toInt()
+
+        if(number % 4 == 0)
+        {
+            if(number % 100 == 0 && number % 400 != 0)
+                println("$number год не является високосным. В нем 365 дней")
+            else
+                println("$number год является високосным. В нем 366 дней")
+        }
+        else
+            println("$number год не является високосным. В нем 365 дней")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+fun If1()
+{
+    val n = 0
+    while(n == 0)
+    {
+        print("Введите целое число: "); var number = readLine()!!.toInt()
+
+        if(number > 0)
+            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
+        else if(number < 0)
+            println("Число $number отрицательно.\nНикаких действий не выполняется\nРезультат: $number")
+        else
+            println("Число $number является нулём.")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+fun If2()
+{
+    val n = 0
+    while(n == 0)
+    {
+        print("Введите целое число: "); var number = readLine()!!.toInt()
+
+        if(number > 0)
+            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
+        else if(number < 0)
+            println("Число $number отрицательно.\nВычитаем из него 2\nРезультат: ${number - 2}")
+        else
+            println("Число $number является нулём.")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+fun If3()
+{
+    val n = 0
+    while(n == 0)
+    {
+        print("Введите целое число: "); var number = readLine()!!.toInt()
+
+        if(number > 0)
+            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
+        else if(number < 0)
+            println("Число $number отрицательно.\nВычитаем из него 2\nРезультат: ${number - 2}")
+        else
+            println("Число $number является нулём.\nЗаменяем его на 10\nРезультат: 10")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+fun Case1()
+{
+    val n = 0
+    while (n == 0)
+    {
+        print("Введите число от 1 до 7: "); val number = readLine()!!.toInt()
+
+        when(number)
+        {
+            1 -> println("Понедельник")
+            2 -> println("Вторник")
+            3 -> println("Среда")
+            4 -> println("Четверг")
+            5 -> println("Пятница")
+            6 -> println("Суббота")
+            7 -> println("Воскресенье")
+            else -> println("В неделе всего семь дней. Продлить выходные не получится")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun If12()
+{
+    val n = 0
+    while(n != 1)
+    {
+        println("Введите три целых числа A, B и C, не равных друг другу")
+
+        print("A: "); var A = readLine()!!.toInt()
+        print("B: "); var B = readLine()!!.toInt()
+        print("C: "); var C = readLine()!!.toInt()
+
+        if(A != B && B != C && A != C)
+        {
+            if (( A < C && C < B) || (A < B && B < C))
+                println("Наименьшее число: $A")
+            else if (( C < B && B < A) || (C < A && A < B))
+                println("Наименьшее число: $C")
+            else if (( B < C && C < A) || (B < A && A < C))
+                println("Наименьшее число: $B")
+        }
+        else
+        {
+            println("Вниметельнее читайте задание >:(")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+// всё ещё коробка -_-
+
 fun If4() //решил Лев Горобец
 {
     println("If6.\n Даны два числа. Вывести большее из них.")
@@ -307,245 +498,7 @@ fun if8() //решил Лев Горобец
         println("Программа тебя не понимает.")
     }
 }
-fun If29()
-{
-    val n = 0
-    while(n == 0)
-    {
-        print("Введите целое число: "); val number = readLine()!!.toInt()
-        if(number < 0)
-        {
-            if (number % 2 == 0)
-                println("Число $number является чётным отрицательным")
-            else
-                println("Число $number является нечётным отрицательным")
-        }
-        else if(number > 0)
-        {
-            if (number % 2 == 0)
-                println("Число $number является чётным положительным")
-            else
-                println("Число $number является нечётным положительным")
-        }
-        else if(number == 0)
-            println("Число $number является нулевым")
 
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-fun If28()
-{
-    val n = 0
-    while (n == 0)
-    {
-        print("Введите номер года: "); val number = readLine()!!.toInt()
-
-        if(number % 4 == 0)
-        {
-            if(number % 100 == 0 && number % 400 != 0)
-                println("$number год не является високосным. В нем 365 дней")
-            else
-                println("$number год является високосным. В нем 366 дней")
-        }
-        else
-            println("$number год не является високосным. В нем 365 дней")
-
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-fun If1()
-{
-    val n = 0
-    while(n == 0)
-    {
-        print("Введите целое число: "); var number = readLine()!!.toInt()
-
-        if(number > 0)
-            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
-        else if(number < 0)
-            println("Число $number отрицательно.\nНикаких действий не выполняется\nРезультат: $number")
-        else
-            println("Число $number является нулём.")
-
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-fun If2()
-{
-    val n = 0
-    while(n == 0)
-    {
-        print("Введите целое число: "); var number = readLine()!!.toInt()
-
-        if(number > 0)
-            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
-        else if(number < 0)
-            println("Число $number отрицательно.\nВычитаем из него 2\nРезультат: ${number - 2}")
-        else
-            println("Число $number является нулём.")
-
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-fun If3()
-{
-    val n = 0
-    while(n == 0)
-    {
-        print("Введите целое число: "); var number = readLine()!!.toInt()
-
-        if(number > 0)
-            println("Число $number положительно.\nПрибавляем к нему 1\nРезультат: ${number + 1}")
-        else if(number < 0)
-            println("Число $number отрицательно.\nВычитаем из него 2\nРезультат: ${number - 2}")
-        else
-            println("Число $number является нулём.\nЗаменяем его на 10\nРезультат: 10")
-
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-fun Case1()
-{
-    val n = 0
-    while (n == 0)
-    {
-        print("Введите число от 1 до 7: "); val number = readLine()!!.toInt()
-
-        when(number)
-        {
-            1 -> println("Понедельник")
-            2 -> println("Вторник")
-            3 -> println("Среда")
-            4 -> println("Четверг")
-            5 -> println("Пятница")
-            6 -> println("Суббота")
-            7 -> println("Воскресенье")
-            else -> println("В неделе всего семь дней. Продлить выходные не получится")
-        }
-
-        println("Хотите продолжить? [да/нет]")
-        print("Ответ: "); var answer = readLine()!!.toString()
-
-        if (answer == "да" || answer == "Да" || answer == "lf" || answer == "Lf" || answer == "yes" || answer == "Yes")
-            continue
-        else if (answer == "нет" || answer == "Нет"  || answer == "Ytn" || answer == "ytn"  || answer == "No" || answer == "no")
-            break
-        else
-        {
-            println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход")
-            break
-        }
-    }
-}
-// всё ещё коробка -_-
-
-///*
-//fun main() {
-//    var truePassword = "123456"
-//
-//    println("Введите пароль")
-//    var userPass = readLine()
-//
-//    if (truePassword == userPass) {
-//        println("Добро пожаловать!")
-//    }
-//    else {
-//        println("Пароль неверный")
-//    }
-//}*/
-//
-//
-//
-//
-////fun main()
-////{
-////    var Temperature_f = readLine()!!.toDouble()
-////    var Tc = (Temperature_f-32)*5/9
-////    print(Tc)
-////
-////}
-////    print("Введите скорость первого автомобиля: ")
-////    var V1 = readLine()!!.toDouble()
-////    print("Введите скорость второго автомобиля: ")
-////    var V2 = readLine()!!.toDouble()
-////    print("Введите расстояние на момент начала рассчета: ")
-////    var S_begin = readLine()!!.toDouble()
-////    print("Время прошедшее со старта: ")
-////    var T = readLine()!!.toDouble()
-////    var S_final =  S_begin+V1*T+V2*T
-////        print("Итоговый рассчет: $S_final")
-//
-//
-////    var Week = readLine()!!.toInt()
-////    var Year = readLine()!!.toInt()
-//import kotlin.math.sqrt
-////import kotlin.random.Random
-////fun main()
-////{
-////    B1()
-////    var a = Random.nextInt(1,8)
-////
-////
-////
-////}
-//
-//
-//
 //ето мая точка, вы кто такие, я вас не звал, идите нахфиг) "ArtemKorol1999"
 fun Begin13 ()
 {
@@ -565,6 +518,7 @@ fun Begin13 ()
     var S3 = S1-S2
     print(S3)
 }
+
 fun Begin33()
 {
     print("\nBegin33\nИзвестно, что X кг конфет стоит A рублей. Определить, сколько стоит 1 кг и Y кг этих же конфет\n")
@@ -581,6 +535,7 @@ fun Begin33()
     var Yrub = kg1*Y
     print(Yrub)
 }
+
 fun Begin15()
 {
     print("\nBegin15\nДана площадь S круга. Найти его диаметр D и длину L окружности,ограничивающей этот круг\n")
@@ -595,61 +550,48 @@ fun Begin15()
     var L = 2*p*R
     print(L)
 }
+
 fun Integer19()
 {
     print("Integer19\nС начала суток прошло N секунд (N — целое). Найти количество полных минут, прошедших с начала суток\nВвидите кол-во сек.")
     var s = readLine()!!.toInt()
     print("Полное кол-во минут:${s/60}")
 }
+
 fun Integer20()
 {
     print("Integer20\nС начала суток прошло N секунд (N — целое). Найти количество полных часов, прошедших с начала суток\nВвидите кол-во сек.")
     var s = readLine()!!.toInt()
     print("Полное кол-во часов:${s/360}")
 }
-fun Blooean7()
+
+fun integer1()
 {
-  print("Blooean7\nДаны три целых числа: A, B, C. Проверить истинность высказывания: «Число B находится между числами A и C»\nВвидит 1 ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-fun integer1() {
     print("Введите расстояние в сантиметрах")
     var a = readLine()!!.toDouble()
     var b = a/100
     print("Количество полных метров= $b")
 }
 
-
-fun begin2(){
+fun begin2()
+{
     print("Введите сторону квадрата:")
     var a = readLine()!!.toDouble()
     var S = a*a
     print("Площадь квадрата равна: $S")
 }
-//
-fun begin25() {
+
+fun begin25()
+{
     print("Введите значение переменной х:")
     var x = readLine()!!.toDouble()
     var y = 3*x.pow(6)-6*x.pow(2)-7
     print("Значение выражения равно : $y")
 
-
 }
-fun begin9 (){
+
+fun begin9 ()
+{
     print("Введите два неотрицательных числа:")
     var a = readLine()!!.toDouble()
     var b = readLine()!!.toDouble()
@@ -657,133 +599,8 @@ fun begin9 (){
     print("Среднее геометрическое этих двух чисел равно: $c")
 }
 
-////import kotlin.math.abs
-////
-////Савелий Соломатов
-////fun main() {
-////    //Boolean 40
-////    var yes = true;
-////    var no = false;
-////    print("Введите кординату где стоит конь по вертикали(от 1 до 8):")
-////    var x1 = readLine()!!.toInt()
-////    print("Введите кординату где стоит конь по горизонтали(от 1 до 8):")
-////    var y1 = readLine()!!.toInt()
-////    print("Введите кординату куда пойдёт конь по вертикали(от 1 до 8):")
-////    var x2 = readLine()!!.toInt()
-////    print("Введите кординату куда пойдёт конь по горизонтали(от 1 до 8):")
-////    var y2 = readLine()!!.toInt()
-////    var vertikal = abs (x1-x2)
-////    var gorizontal = abs(y1-y2)
-////    var hod = abs(x1-x2)+ abs(y1-y2)
-////    print(yes.and((hod == 3 )&&((gorizontal==1)||(gorizontal==2))&&((vertikal==1)||(vertikal==2))))
-////}
-
-//////просто строчки (начало)
-////fun begin1 () {
-////    var a = readLine().toString().toDouble()
-////    println(4*a)
-////}
-//
-//
-//
-////fun begin2() {
-////    var a = readLine().toString().toDouble()
-////    println(a*a)
-////}
-//
-//
-//
-////fun begin3() {
-////    println("a: ")
-////    var a = readLine().toString().toDouble()
-////    println("b: ")
-////    var b = readLine().toString().toDouble()
-////    var S = a*b
-////    var P = 2*(a+b)
-////    println("S = $S")
-////    println("P = $P")
-////}
-//
-//
-//
-////fun begin4() {
-////    println("d: ")
-////    var d = readLine().toString().toDouble()
-////    var pi = 3.14 //В качестве значения пи использовать 3.14
-////    println(pi*d)
-////}
-//
-//
-//
-////fun begin5() {
-////    println("a: ")
-////    var a = readLine().toString().toDouble()
-////    var V = a.pow(3)
-////    var S = 6*(a*a)
-////    println("V = $V")
-////    println("S = $S")
-////}
-//
-//
-//
-////fun begin6() {
-////    println("a: ")
-////    var a = readLine().toString().toDouble()
-////    println("b: ")
-////    var b = readLine().toString().toDouble()
-////    println("h: ")
-////    var h = readLine().toString().toDouble()
-////    var V = a*b*h
-////    var S = 2*(a*b+h*b+a*h)
-////    println("V = $V")
-////    println("S = $S")
-////}
-//
-//
-//
-////fun begin7() {
-////    println("R: ")
-////    var R = readLine().toString().toDouble()
-////    var pi = 3.14 //В качестве значения пи использовать 3.14
-////    var L = 2*pi*R
-////    var S = pi*(R*R)
-////    println("L = $L")
-////    println("S = $S")
-////}
-//
-//
-//
-////fun begin8() {
-////    println("a: ")
-////    var a = readLine().toString().toDouble()
-////    println("b: ")
-////    var b = readLine().toString().toDouble()
-////    println((a+b)/2)
-////}
-//
-//
-////fun begin9() {
-////    println("a: ")
-////    var a = readLine().toString().toDouble()
-////    println("b: ")
-////    var b = readLine().toString().toDouble()
-////    println(sqrt(a*b))
-////}
-/*fun int11() {
-    println("Дано трехзначное число. Найти сумму и произведение его цифр.")
-    println("Введите число: ")
-    var num = readLine().toString().toDouble()
-    var num_sot = num/100
-    var num_des = num%100/10
-    var num_edin = num%100%10/1
-    println("Сумма: ${num_sot+num_des+num_edin}")
-    println("Произведение: ${num_sot+num_des+num_edin}")
-}
-
- */
-//////просто строчки (конец)
-
-fun If8() {
+fun If8()
+{
     println("If8.\nДаны два числа. Вывести вначале большее, а затем меньшее из них.")
     println("Первое число: ")
     var a = readLine().toString().toDouble()
@@ -802,7 +619,8 @@ fun If8() {
     }
 }
 
-fun if4() {
+fun if6()
+{
     println("If6.\n Даны два числа. Вывести большее из них.")
     println("Первое число: ")
     var a = readLine().toString().toDouble()
