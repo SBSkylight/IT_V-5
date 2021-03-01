@@ -1,5 +1,4 @@
-import kotlin.math.pow
-import kotlin.math.sqrt
+import kotlin.math.*
 
 fun main()
 {
@@ -34,13 +33,21 @@ fun explorer()
         "b13" -> Begin13()
         "b15" -> Begin15()
         "if4" -> If4()
-        "if8" -> if8()
+        "if8" -> If8()
         "b33" -> Begin33()
         "i7"-> Interger7()
         "i9"-> Interger9()
         "i11"-> Integer11()
         "i28" -> Integer28()
         "f1" -> For1()
+        "f2" -> For2()
+        "f3" -> For3()
+        "f4" -> For4()
+        "f7" -> For7()
+        "f8" -> For8()
+        "f9" -> For9()
+        "f10" -> For10()
+        "fw10" -> For10_while()
         "a1" -> Araray1()
         "if30" -> If30()
         "if29" -> If29()
@@ -48,6 +55,7 @@ fun explorer()
         "if1" -> If1()
         "if2" -> If2()
         "if3" -> If3()
+        "if6" -> If6()
         "if12" -> If12()
         "if13" -> If13()
         "if14" -> If14()
@@ -619,25 +627,6 @@ fun If4() //решил Лев Горобец
         println("Программа тебя не понимает.")
     }
 }
-fun if8() //решил Лев Горобец
-{
-    println("If8.\nДаны два числа. Вывести вначале большее, а затем меньшее из них.")
-    println("Первое число: ")
-    var a = readLine().toString().toDouble()
-    println("Второе число: ")
-    var b = readLine().toString().toDouble()
-    if (a > b) {
-        println("Большее число: $a")
-        println("Меньшее число: $b")
-    } else if (b < a) {
-        println("Большее число: $b")
-        println("Меньшее число: $a")
-    } else if (a == b) {
-        println("Оба числа равны.")
-    } else {
-        println("Программа тебя не понимает.")
-    }
-}
 
 //ето мая точка, вы кто такие, я вас не звал, идите нахфиг) "ArtemKorol1999"
 fun Begin13 ()
@@ -746,20 +735,27 @@ fun If8()
     var a = readLine().toString().toDouble()
     println("Второе число: ")
     var b = readLine().toString().toDouble()
-    if (a > b) {
+    if (a > b)
+    {
         println("Большее число: $a")
         println("Меньшее число: $b")
-    } else if (b < a) {
+    }
+    else if (b < a)
+    {
         println("Большее число: $b")
         println("Меньшее число: $a")
-    } else if (a == b) {
+    }
+    else if (a == b)
+    {
         println("Оба числа равны.")
-    } else {
+    }
+    else
+    {
         println("Программа тебя не понимает.")
     }
 }
 
-fun if6()
+fun If6()
 {
     println("If6.\n Даны два числа. Вывести большее из них.")
     println("Первое число: ")
@@ -781,5 +777,247 @@ fun if6()
     else
     {
         println("Программа тебя не понимает.")
+    }
+}
+
+fun For9()
+{
+    var n = 0
+    while(n!=1)
+    {
+        println("Вводятся два целых числа A и B (A < B). Находит сумму квадратов всех целых\n" +
+                "чисел от A до B включительно.")
+        print("A: ");
+        var a = readLine()!!.toInt()
+        print("B: ");
+        var b = readLine()!!.toInt()
+        var summa = 0
+        if (a < b)
+        {
+            for (i in a..b)
+            {
+                summa += i * i
+                println(i * i)
+            }
+            println("Сумма чисел от $a до $b равняется")
+            println(summa)
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For10_while()
+{
+    var n = 0
+    while (n!=1)
+    {
+        print("Введите целое число: ");var number = readLine()!!.toInt()
+        var summa = 0.0
+        var i = 1
+        var counter_double = 0.0
+        while(i <= number)
+        {
+            counter_double=i.toDouble()
+            summa = summa + 1/counter_double
+
+            println(summa)
+            i++
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For10()
+{
+    var n = 0
+    while(n!= 1)
+    {
+        print("Введите целое число: ");var number = readLine()!!.toInt()
+        var summa = 0.0
+        var counter_double = 0.0
+        for(i in 1..number)
+        {
+            counter_double=i.toDouble()
+            summa = summa + 1/counter_double
+
+            println(summa)
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For8()
+{
+    var n = 0
+    while(n!= 1)
+    {
+        println("Вводятся два целых числа A и B (A < B). Находит произведение всех целых\n" +
+                "чисел от A до B включительно.")
+        print("A: "); var a = readLine()!!.toInt()
+        print("B: "); var b = readLine()!!.toInt()
+        var proizv = 1
+        for(i in a..b)
+        {
+            proizv = proizv * i
+            println(proizv)
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For7()
+{
+    var n = 0
+    while(n!= 1)
+    {
+        println("Вводятся два целых числа A и B (A < B). Находит сумму всех целых чисел\n" +
+                "от A до B включительно.")
+        print("A: "); var a = readLine()!!.toInt()
+        print("B: "); var b = readLine()!!.toInt()
+        var summa = 0
+        for(i in a..b)
+        {
+            summa += i
+            println(summa)
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For2()
+{
+    var n = 0
+    while(n!= 1)
+    {
+        println("Вводятся два целых числа A и B (A < B). Выводится в порядке возрастания все\n" +
+                "целые числа, расположенные между A и B (включая сами числа A и B), а\n" +
+                "также количество N этих чисел.")
+        print("A: "); var a = readLine()!!.toInt()
+        print("B: "); var b = readLine()!!.toInt()
+        var counter = 0
+        for(i in a..b)
+        {
+            println(i)
+            counter += 1
+        }
+        println("Количество чисел составляет $counter")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For3()
+{
+    var n = 0
+    while(n!= 1)
+    {
+        println("Вводятся два целых числа A и B (A < B). Выводится в порядке убывания все\n" +
+                "целые числа, расположенные между A и B (не включая числа A и B), а\n" +
+                "также количество N этих чисел.")
+        print("A: "); var a = readLine()!!.toInt()
+        print("B: "); var b = readLine()!!.toInt()
+        var counter = 0
+        for(i in b downTo a step 1)
+        {
+            if(i != a && i != b)
+            {
+                println(i)
+                counter += 1
+            }
+        }
+        println("Количество чисел составляет $counter")
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For4()
+{
+    var n = 0
+    while(n!=1)
+    {
+        println("Вводится вещественное число — цена 1 кг конфет. Выводится стоимость 1,\n" +
+                "2, . . . , 10 кг конфет.\n")
+        print("Число: "); var number = readLine()!!.toInt()
+        for(i in 1..10)
+        {
+            println("Цена $i кг конфет: ${number * i}")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
     }
 }
