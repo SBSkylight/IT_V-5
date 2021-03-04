@@ -53,6 +53,7 @@ fun explorer()
         "f17" -> For17()
         "f19" -> For19()
         "f37" -> For37()
+        "f38" -> For38()
         "a1" -> Araray1()
         "if30" -> If30()
         "if29" -> If29()
@@ -1189,6 +1190,45 @@ fun For37()
             {
                 i_1 = i.toLong()
                 summa = summa + i_1 * i_1
+            }
+
+            println("Сумма равняется $summa")
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For38()
+{
+    val n = 0
+    while( n!= 1)
+    {
+        print("Введите целое положительное число N: "); var N = readLine()!!.toLong()
+
+        if (N > 0)
+        {
+            var summa :Long = 0
+            var i_1 :Long = 1
+            var N_1  = N + 1
+
+            for (i in 1..N)
+            {
+                i_1 = i.toLong()
+                summa = summa + i_1 * (N_1 - i)
             }
 
             println("Сумма равняется $summa")
