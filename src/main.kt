@@ -48,6 +48,9 @@ fun explorer()
         "f9" -> For9()
         "f10" -> For10()
         "fw10" -> For10_while()
+        "f11" -> For11()
+        "f15" -> For15()
+        "f17" -> For17()
         "a1" -> Araray1()
         "if30" -> If30()
         "if29" -> If29()
@@ -1008,6 +1011,114 @@ fun For4()
         for(i in 1..10)
         {
             println("Цена $i кг конфет: ${number * i}")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For11()
+{
+    val n = 0
+    while (n != 1)
+    {
+        print("Введите целое положительное число N: "); var N = readLine()!!.toInt()
+
+        if (N > 0)
+        {
+            var summa = 0
+
+            for (i in 0..N)
+            {
+                summa += (N + i) * (N + i)
+            }
+            println("Сумма равняется $summa")
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For15()
+{
+    val n = 0
+    while(n != 1)
+    {
+        print("Введите целое положительное число N: "); var N = readLine()!!.toInt()
+        print("Введите целое положительное число A: "); var A = readLine()!!.toInt()
+
+        if (N > 0)
+        {
+            var stepen = 1
+
+            for (i in 1..N)
+            {
+                stepen *= A
+            }
+            println("$A в степени $N равняется $stepen")
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For17()
+{
+    val n = 0
+    while(n != 1)
+    {
+        print("Введите целое положительное число N: "); var N = readLine()!!.toInt()
+        print("Введите целое положительное число A: "); var A = readLine()!!.toInt()
+        if (N > 0)
+        {
+            var summa = 1
+            for (i in 1..N)
+            {
+                summa += A
+                A = A * A
+            }
+
+            println("Сумма равняется $summa")
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
         }
 
         println("Хотите продолжить? [да/нет]")
