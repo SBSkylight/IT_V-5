@@ -1,5 +1,6 @@
 import kotlin.math.*
 
+// работа выполнена межгалактической командой it_v-5
 fun main()
 {
     val n =0
@@ -52,9 +53,11 @@ fun explorer()
         "f15" -> For15()
         "f17" -> For17()
         "f19" -> For19()
+        "f36" -> For36()
         "f37" -> For37()
         "f38" -> For38()
         "f39" -> For39()
+        "f40" -> For40()
         "a1" -> Araray1()
         "if30" -> If30()
         "if29" -> If29()
@@ -72,8 +75,6 @@ fun explorer()
         else -> println("Такой задачи нет!")
     }
 }
-
-//КУЗНЕЦОВ КИРИЛЛ нетрогать пж пж пж пж пж!!!!!!!!!!!!!
 
 fun Begin1()
 {
@@ -116,18 +117,8 @@ fun Begin5()
     println(S)
 }
 
-fun Begin6()
+fun begin6()
 {
-    var a = 100
-    var b = 555
-    var c = 222
-    var V = a*b*c
-    var S = 2*(a*b+b*c+a*c)
-    println(V)
-    println(S)
-}
-
-fun begin6() { //решил Лев Горобец
     println("a: ")
     var a = readLine().toString().toDouble()
     println("b: ")
@@ -140,14 +131,14 @@ fun begin6() { //решил Лев Горобец
     println("S = $S")
 }
 
-fun Begin12()//Михаил Розенталь
+fun Begin12()
 {
     print("\nBegin12\nДаны катеты прямоугольного треугольника a и b. Найти его гипотенузу и периметр P.\n")
     print("Введите катет а: ")
     var a = readLine()!!.toDouble()
     print("Введите катет b: ")
     var b = readLine()!!.toDouble()
-    var c = sqrt(a.pow(2)+b.pow(2)) //sqrt(*выражение*) = (*выражение*).pow(0.5)
+    var c = sqrt(a.pow(2)+b.pow(2))
     var cpow = (a.pow(2)+b.pow(2)).pow(0.5)
     var P = a+b+c
     var Pcpow = a+b+cpow
@@ -155,7 +146,7 @@ fun Begin12()//Михаил Розенталь
     print("Периметр = $P \n Периметр(pow) = $Pcpow \n")
 }
 
-fun Integer11()//Решила межгалакическая коллегия группы итв-5
+fun Integer11()
 {
     print("Integer11.\nДано трехзначное число. Найти сумму и произведение его цифр.\n")
     print("Введите число от -999 до 999: ")
@@ -167,7 +158,7 @@ fun Integer11()//Решила межгалакическая коллегия г
     println("Произведение: ${number/100*number%100/10*number%100%10}")
 }
 
-fun Interger7()//Решила Ожогина Танюшка!11!!!11
+fun Interger7()
 {
     print("Integer7.\n Дано дыухзначное число. Найтри сумму и произведение его цифр.\n")
     print("Введите число от -99 до 99: ")
@@ -178,7 +169,7 @@ fun Interger7()//Решила Ожогина Танюшка!11!!!11
     println("Произведение: ${number/10*number%10}")
 }
 
-fun Interger9()// Снова Ожогина Танюшка лол!!1!!!!1!
+fun Interger9()
 {
     print("Integer9.\n Дано трёхзначное число. Используя одну операцию деления нацело, вывести первую цифру данного числа(сотни)\n")
     print("Введите число от -999 до 999: ")
@@ -186,7 +177,6 @@ fun Interger9()// Снова Ожогина Танюшка лол!!1!!!!1!
     println("Сотни: ${number/100}")
 }
 
-// большая коробка решений Гладких Марины *_*
 fun Integer28()
 {
     val days = mapOf(1 to "Понедельник", 2 to "Вторник", 3 to "Среда", 4 to "Четверг", 5 to "Пятница", 6 to "Суббота", 0 to "Воскресенье")
@@ -1287,3 +1277,80 @@ fun For39()
     }
 }
 
+fun For40()
+{
+    val n = 0
+    while( n!= 1)
+    {
+        print("Введите целое положительное число A: "); var A = readLine()!!.toInt()
+        print("Введите целое положительное число B, большее чем число A: "); var B = readLine()!!.toInt()
+
+        if (A < B)
+        {
+            for(i in A..B+1)
+            {
+                for(j in 0..i)
+                {
+                    println(i)
+                }
+            }
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun For36()
+{
+    val n = 0
+    while( n!= 1)
+    {
+        print("Введите целое положительное число N: "); var N = readLine()!!.toLong()
+        print("Введите целое положительное число K: "); var K = readLine()!!.toLong()
+        var summa :Long = 0
+        var n :Long = 0
+
+
+        if (N > 0 && K > 0)
+        {
+            for(i in 1..N)
+            {
+                for(j in 1..K)
+                {
+                    n = i * i
+                }
+
+                summa += n
+            }
+            println("Сумма равняется $summa")
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
