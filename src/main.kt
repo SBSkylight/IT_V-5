@@ -54,6 +54,7 @@ fun explorer()
         "f19" -> For19()
         "f37" -> For37()
         "f38" -> For38()
+        "f39" -> For39()
         "a1" -> Araray1()
         "if30" -> If30()
         "if29" -> If29()
@@ -1250,3 +1251,39 @@ fun For38()
         }
     }
 }
+
+fun For39()
+{
+    val n = 0
+    while( n!= 1)
+    {
+        print("Введите целое положительное число A: "); var A = readLine()!!.toInt()
+        print("Введите целое положительное число B, большее чем число A: "); var B = readLine()!!.toInt()
+        if (A < B)
+        {
+            for(i in A..B+1)
+            {
+                for(j in 1..i)
+                {
+                    println(i)
+                }
+            }
+        }
+        else
+        {
+            println("Внимательнее читайте условие")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
