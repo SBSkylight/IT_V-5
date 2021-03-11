@@ -30,9 +30,11 @@ fun explorer()
         "b4" ->Begin4()
         "b5" ->Begin5()
         "b6" ->begin6()
+        "b9" -> begin9()
         "b12" -> Begin12()
         "b13" -> Begin13()
         "b15" -> Begin15()
+        "b25" -> begin25()
         "if4" -> If4()
         "if8" -> If8()
         "b33" -> Begin33()
@@ -69,6 +71,8 @@ fun explorer()
         "if12" -> If12()
         "if13" -> If13()
         "if14" -> If14()
+        "if15" -> If15()
+        "i1" -> integer1()
         "i19" -> Integer19()
         "i20" -> Integer20()
         "c1" -> Case1()
@@ -605,9 +609,8 @@ fun If15()
         }
     }
 }
-// всё ещё коробка -_-
 
-fun If4() //решил Лев Горобец
+fun If4()
 {
     println("If6.\n Даны два числа. Вывести большее из них.")
     println("Первое число: ")
@@ -625,7 +628,6 @@ fun If4() //решил Лев Горобец
     }
 }
 
-//ето мая точка, вы кто такие, я вас не звал, идите нахфиг) "ArtemKorol1999"
 fun Begin13 ()
 {
     ("\nBegin13\nДаны два круга с общим центром и радиусами R1 и R2 Найти площади этих кругов S1 и S2, а также площадь S3 кольца\n")
@@ -697,14 +699,6 @@ fun integer1()
     var a = readLine()!!.toDouble()
     var b = a/100
     print("Количество полных метров= $b")
-}
-
-fun begin2()
-{
-    print("Введите сторону квадрата:")
-    var a = readLine()!!.toDouble()
-    var S = a*a
-    print("Площадь квадрата равна: $S")
 }
 
 fun begin25()
