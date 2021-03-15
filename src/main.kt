@@ -625,7 +625,7 @@ fun Case7()
             when(massa)
             {
                 1 -> println("$A кг = $A кг")
-                2 -> println("$A мг = ${A / 10000} кг")
+                2 -> println("$A мг = ${A / 1000000} кг")
                 3 -> println("$A г = ${A / 1000} кг")
                 4 -> println("$A т = ${A * 1000} кг")
                 5 -> println("$A ц = ${A / 100} кг")
