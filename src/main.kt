@@ -539,8 +539,8 @@ fun Case5()
     val n = 0
     while (n == 0)
     {
-        println("Введите число A: "); val A = readLine()!!.toInt()
-        println("Введите число B, неравное нулю: "); val B = readLine()!!.toInt()
+        print("Введите число A: "); val A = readLine()!!.toInt()
+        print("Введите число B, неравное нулю: "); val B = readLine()!!.toInt()
 
         if (B != 0)
         {
@@ -577,7 +577,7 @@ fun Case6()
     val n = 0
     while (n == 0)
     {
-        println("Введите длину отрезка A: "); val A = readLine()!!.toDouble()
+        print("Введите длину отрезка A: "); val A = readLine()!!.toDouble()
 
         if (A > 0)
         {
@@ -616,7 +616,7 @@ fun Case7()
     val n = 0
     while (n == 0)
     {
-        println("Введите массу тела A: "); val A = readLine()!!.toDouble()
+        print("Введите массу тела A: "); val A = readLine()!!.toDouble()
 
         if (A > 0)
         {
