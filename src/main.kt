@@ -81,6 +81,7 @@ fun explorer()
         "c4" -> Case4()
         "c5" -> Case5()
         "c6" -> Case6()
+        "c7" -> Case7()
         else -> println("Такой задачи нет!")
     }
 }
@@ -589,6 +590,45 @@ fun Case6()
                 3 -> println("$A м = $A м")
                 4 -> println("$A мм = ${A / 1000} м")
                 5 -> println("$A см = ${A / 100} м")
+                else -> println("ErRoR")
+            }
+        }
+        else
+        {
+            println("Попробуйте в другой раз")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case7()
+{
+    val n = 0
+    while (n == 0)
+    {
+        println("Введите массу тела A: "); val A = readLine()!!.toDouble()
+
+        if (A > 0)
+        {
+            print("Введите номер нужной вам единицы массы [1 — килограмм,\n" +
+                    "2 — миллиграмм, 3 — грамм, 4 — тонна, 5 — центнер]: "); val massa = readLine()!!.toInt()
+            when(massa)
+            {
+                1 -> println("$A кг = $A кг")
+                2 -> println("$A мг = ${A / 10000} кг")
+                3 -> println("$A г = ${A / 1000} кг")
+                4 -> println("$A т = ${A * 1000} кг")
+                5 -> println("$A ц = ${A / 100} кг")
                 else -> println("ErRoR")
             }
         }
