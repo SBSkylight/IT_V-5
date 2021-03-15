@@ -78,6 +78,7 @@ fun explorer()
         "c1" -> Case1()
         "c2" -> Case2()
         "c3" -> Case3()
+        "c4" -> Case4()
         else -> println("Такой задачи нет!")
     }
 }
@@ -479,6 +480,42 @@ fun Case3()
             3,4,5 -> println("Весна")
             6,7,8 -> println("Лето")
             9,10,11 -> println("Осень")
+            else -> println("Только раз в году...")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case4()
+{
+    val n = 0
+    while (n == 0)
+    {
+        print("Введите номер месяца: "); val number = readLine()!!.toInt()
+
+        when(number)
+        {
+            1 -> println("В этом месяце 31 день")
+            2 -> println("В этом месяце 28 дней")
+            3 -> println("В этом месяце 31 день")
+            4 -> println("В этом месяце 30 дней")
+            5 -> println("В этом месяце 31 день")
+            6 -> println("В этом месяце 30 дней")
+            7 -> println("В этом месяце 31 день")
+            8 -> println("В этом месяце 31 день")
+            9 -> println("В этом месяце 30 дней")
+            10 -> println("В этом месяце 31 день")
+            11 -> println("В этом месяце 30 дней")
+            12 -> println("В этом месяце 31 день")
             else -> println("Только раз в году...")
         }
 
