@@ -76,6 +76,7 @@ fun explorer()
         "i19" -> Integer19()
         "i20" -> Integer20()
         "c1" -> Case1()
+        "c2" -> Case2()
         else -> println("Такой задачи нет!")
     }
 }
@@ -403,6 +404,7 @@ fun If3()
         }
     }
 }
+
 fun Case1()
 {
     val n = 0
@@ -420,6 +422,35 @@ fun Case1()
             6 -> println("Суббота")
             7 -> println("Воскресенье")
             else -> println("В неделе всего семь дней. Продлить выходные не получится")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case2()
+{
+    val n = 0
+    while (n == 0)
+    {
+        print("Введите полученную отметку: "); val number = readLine()!!.toInt()
+
+        when(number)
+        {
+            1 -> println("Плохо")
+            2 -> println("Неудовлетворительно")
+            3 -> println("Удовретворительно")
+            4 -> println("Хорошо")
+            5 -> println("Отлично")
+            else -> println("ErRoR")
         }
 
         println("Хотите продолжить? [да/нет]")
