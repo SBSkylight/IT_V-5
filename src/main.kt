@@ -80,6 +80,7 @@ fun explorer()
         "c3" -> Case3()
         "c4" -> Case4()
         "c5" -> Case5()
+        "c6" -> Case6()
         else -> println("Такой задачи нет!")
     }
 }
@@ -549,6 +550,45 @@ fun Case5()
                 2 -> println("$A - $B = ${A - B}")
                 3 -> println("$A * $B = ${A * B}")
                 4 -> println("$A / $B = ${A / B}")
+                else -> println("ErRoR")
+            }
+        }
+        else
+        {
+            println("Попробуйте в другой раз")
+            break
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case6()
+{
+    val n = 0
+    while (n == 0)
+    {
+        println("Введите длину отрезка A: "); val A = readLine()!!.toDouble()
+
+        if (A > 0)
+        {
+            print("Введите номер нужной вам единицы длины [1 — дециметр,\n" +
+                    "2 — километр, 3 — метр, 4 — миллиметр, 5 — сантиметр]: "); val dlina = readLine()!!.toInt()
+            when(dlina)
+            {
+                1 -> println("$A дм = ${A / 10} м")
+                2 -> println("$A км = ${A * 1000} м")
+                3 -> println("$A м = $A м")
+                4 -> println("$A мм = ${A / 1000} м")
+                5 -> println("$A см = ${A / 100} м")
                 else -> println("ErRoR")
             }
         }
