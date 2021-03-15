@@ -79,6 +79,7 @@ fun explorer()
         "c2" -> Case2()
         "c3" -> Case3()
         "c4" -> Case4()
+        "c5" -> Case5()
         else -> println("Такой задачи нет!")
     }
 }
@@ -517,6 +518,44 @@ fun Case4()
             11 -> println("В этом месяце 30 дней")
             12 -> println("В этом месяце 31 день")
             else -> println("Только раз в году...")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case5()
+{
+    val n = 0
+    while (n == 0)
+    {
+        println("Введите число A: "); val A = readLine()!!.toInt()
+        println("Введите число B, неравное нулю: "); val B = readLine()!!.toInt()
+
+        if (B != 0)
+        {
+            print("Введите номер арифметического действия [1 — сложение, 2 — вычитание, 3 — умножение, 4 — деление]: "); val action = readLine()!!.toInt()
+            when(action)
+            {
+                1 -> println("$A + $B = ${A + B}")
+                2 -> println("$A - $B = ${A - B}")
+                3 -> println("$A * $B = ${A * B}")
+                4 -> println("$A / $B = ${A / B}")
+                else -> println("ErRoR")
+            }
+        }
+        else
+        {
+            println("Попробуйте в другой раз")
+            break
         }
 
         println("Хотите продолжить? [да/нет]")
