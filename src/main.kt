@@ -77,6 +77,7 @@ fun explorer()
         "i20" -> Integer20()
         "c1" -> Case1()
         "c2" -> Case2()
+        "c3" -> Case3()
         else -> println("Такой задачи нет!")
     }
 }
@@ -451,6 +452,34 @@ fun Case2()
             4 -> println("Хорошо")
             5 -> println("Отлично")
             else -> println("ErRoR")
+        }
+
+        println("Хотите продолжить? [да/нет]")
+        print("Ответ: "); var answer = readLine()!!.toString().toLowerCase()
+
+        when(answer)
+        {
+            "lf","да","yes" -> continue
+            "no", "ytn", "нет" -> break
+            else -> {println("Программа не может распознать ваш ответ. Выполнятеся аварийный выход"); break}
+        }
+    }
+}
+
+fun Case3()
+{
+    val n = 0
+    while (n == 0)
+    {
+        print("Введите номер месяца: "); val number = readLine()!!.toInt()
+
+        when(number)
+        {
+            1,2,12 -> println("Зима")
+            3,4,5 -> println("Весна")
+            6,7,8 -> println("Лето")
+            9,10,11 -> println("Осень")
+            else -> println("Только раз в году...")
         }
 
         println("Хотите продолжить? [да/нет]")
